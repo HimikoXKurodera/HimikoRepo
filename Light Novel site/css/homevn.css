@@ -1,0 +1,779 @@
+@import url('reset.css');
+
+html{
+	background: #f3efe0;
+	background-image:url('https://files.yande.re/jpeg/219922bc76ce9abbb1e8368f867efe81/yande.re%20295525%20color_issue%20crease%20date_a_live%20fixme%20heterochromia%20tagme%20thighhighs%20tokisaki_kurumi.jpg');
+ 
+}
+
+
+a{
+	color:#fff;
+	text-decoration:none;
+}
+
+
+/*Code for side off-canvas menu*/
+h1{
+	font-family: 'Raleway' ,Arial, sans-serif;
+	font-weight: 700;
+	font-size: 45px;
+	color: #38935f;
+}
+
+h3{
+	font-family: 'Raleway', Arial, sans-serif;
+	font-weight: 400;
+	font-size: 25px;
+	margin-top: 15px;
+	color: #918e84;
+}
+
+#container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+	overflow-x:hidden;
+	
+   
+}
+
+#canvas{
+	width:100%;
+	height: 100%;
+	padding: 0 0;
+	position: absolute;
+	 -webkit-transform:translateX(0);
+    -moz-transform:translateX(0);
+    -ms-transform:translateX(0);
+     -o-transform:translateX(0);
+        transform:translateX(0);
+ 
+    -webkit-transition:.5s ease all;
+    -moz-transition:.5s ease all;
+     -o-transition:.5s ease all;
+        transition:.5s ease all;
+}
+
+#nav {
+    width: 300px;
+    height: 10000px;
+    background: #38935f;
+    position: absolute;
+    left: -300px;
+    top: 0;
+ 
+    -webkit-transition:.5s ease all;
+    -moz-transition:.5s ease all;
+     -o-transition:.5s ease all;
+        transition:.5s ease all;
+ 
+/* By default, rotate the menu 90deg inwards */
+    -webkit-transform:rotateY(-90deg);
+    -moz-transform:rotateY(-90deg);
+    -ms-transform:rotateY(-90deg);
+     -o-transform:rotateY(-90deg);
+        transform:rotateY(-90deg);
+}
+
+#bars{
+    position: relative;
+	padding-bottom:0px;
+	
+	/*margin-top: -10px;*/
+}
+
+#bars:hover{
+    color: #fff;
+	
+	
+}
+
+#title{
+    margin: 10px;
+    padding: 1px auto;
+	
+    color: white;
+    text-shadow: 0 0 1px rgba(0,0,0,0.1);
+    font-weight: 30;
+    font-size: 2em;
+    font-family: 'Raleway', Arial;
+	text-align: center; 
+}
+
+.border{
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+a.back {
+    
+    color: #38935f;
+    width: 200px;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Raleway';
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+    margin: 50px auto 0 auto;
+    border: 2px solid #38935f;
+    padding: 10px;
+}
+a.back:hover{
+    color: #48b978;
+    border: 2px solid #48b978;
+}
+ 
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+#toggle {
+    list-style: none;
+    margin-top: 40px;
+}
+#toggle div:hover {
+    background: rgba(236, 200, 19, 0.3);
+    -webkit-box-shadow:inset 0 -1px rgba(0,0,0,0);
+    -moz-box-shadow:inset 0 -1px rgba(0,0,0,0);
+    box-shadow:inset 0 -1px rgba(0,0,0,0);
+    color: #fff;
+}
+#toggle div.active {
+    background: rgba(236, 164, 19, 0.39);
+}
+#toggle div {
+    cursor: pointer;
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+ span.menu-icons {
+    font-size: 20px;
+    height: 20px;
+    width: 22px;
+    float: left;
+    margin: 11px 0px 10px 37px;
+    color: #fff;
+}
+span.menu-icon{
+    font-size: 20px;
+    height: 20px;
+    width: 22px;
+    float: right;
+    margin: 11px 0px 10px 37px;
+    color: #fff;
+}
+
+span.the-btn {
+    float: right;
+    font-size: 20px;
+    height: 30px;
+    width: 43px;
+    margin-top: 10px;
+    margin-right: 8px;
+    padding:0;
+    color: #fff;
+}
+#toggle ul {
+    list-style: none;
+    display: none;
+    color: #fff;
+    background: rgba(0,0,0,0.2);
+    -webkit-box-shadow:inset 0 -1px rgba(0,0,0,0);
+    -moz-box-shadow:inset 0 -1px rgba(0,0,0,0);
+    box-shadow:inset 0 -1px rgba(0,0,0,0);
+}
+#toggle li a {
+    line-height: 41px;
+    color: #fff;
+    list-style: none;
+    width: 240px;
+    padding: 0;
+    margin: 0 0 0 50px;
+}
+#toggle a {
+    margin: 0 0 0 47px;
+    padding: 0;
+    font-family: 'Lato';
+    color: #fff;
+    line-height: 41px;
+    font-weight: normal;
+    font-size: 18px;
+    text-decoration: none;
+}
+#toggle ul li {
+    margin-left: 109px;
+}
+#toggle ul li a:hover{
+    background: url('https://new2van.files.wordpress.com/2009/07/p10502041.jpg');
+	opacity: 0.2;
+}
+#toggle ul li a {
+     margin-left: 0;
+}
+
+
+#nav {
+    width: 300px;
+    height: 10000px;
+    background: url(../images/tileable-light-blurs-and-abstract-circles-18.png);
+    position: absolute;
+    left: -300px;
+    top: 0;
+ 
+    -webkit-transition:.5s ease all;
+    -moz-transition:.5s ease all;
+    -o-transition:.5s ease all;
+    transition:.5s ease all;
+ 
+/* By default, rotate the menu 90deg inwards */
+    -webkit-transform:rotateX(90deg);
+    -moz-transform:rotateX(90deg);
+    -ms-transform:rotateX(90deg);
+     -o-transform:rotateX(90deg);
+        transform:rotateX(90deg);
+}
+ 
+#container.display-nav #canvas {
+   -webkit-transform:translateX(300px);
+   -moz-transform:translateX(300px);
+    -ms-transform:translateX(300px);
+     -o-transform:translateX(300px);
+        transform:translateX(300px);
+}
+ 
+/* transition the menu with perspective on "show-nav" */
+#container.display-nav #nav {
+   -webkit-transform-origin:10% 50%;
+   -moz-transform-origin:10% 50%;
+    -ms-transform-origin:10% 50%;
+     -o-transform-origin:10% 50%;
+        transform-origin:10% 50%;
+ 
+   -webkit-transform:perspective(600px) rotateY(90deg);
+   -moz-transform:perspective(600px) rotateY(0deg);
+    -ms-transform:perspective(600px) rotateY(0deg);
+     -o-transform:perspective(600px) rotateY(0deg);
+        transform:perspective(600px) rotateY(0deg);
+}
+
+#nav .avatar h1{
+	color:white;
+}
+
+#nav .avatar{
+	padding-left: 0.1em; 
+	height: 100px;
+	padding-top: 0.1em; 
+	margin-left: 5.5em; 
+	border:4px solid yellow;
+	border-radius: 50%;
+	text-align:center;
+	width:100px;
+	overflow:hidden;
+	position: relative;
+}
+#nav .avatar .img-circle{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+	right: 0;
+	bottom: 0; 
+}
+
+/*Relavant css for login form*/
+
+.menu_opener {
+
+  display: none;
+
+}
+
+.link_general  p{
+	color: white;
+	font-family: "Abel";
+	font-size: 20px;
+	padding-top: 10px;
+	padding-left:90px;
+	text-align: left;
+}
+
+
+
+
+
+.menu_opener:checked ~ .link_one {
+
+  top: auto;
+  /*left: 700px;*/
+  left:100px;
+  
+    transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+  -webkit-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+  -moz-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+  -o-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+
+
+}
+
+
+
+.menu_opener:checked ~ .link_two {
+
+  top: auto;
+  left: 500px;
+  
+    transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+  -webkit-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+  -moz-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+  -o-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+
+}
+
+.menu_opener:checked ~ .link_three {
+
+  top: auto;
+  left:300px;
+  
+    transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+  -webkit-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+  -moz-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+  -o-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+
+}
+
+.menu_opener:checked ~ .link_four {
+  
+  top: auto;
+ /* left: 100px;*/
+ left: 700px;
+
+}
+.menu_opener:checked ~ .link_five {
+  
+  top: auto;
+  left: 900px;
+
+}
+.menu_opener:checked ~ .barre_hamburger {
+
+  opacity: 0;
+
+}
+
+.menu_opener:checked ~ .menu_opener_label:after {
+
+  transform: rotate(45deg);
+
+  top: 70px;
+
+}
+
+.menu_opener:checked ~ .menu_opener_label:before {
+
+  transform: rotate(-45deg);
+
+  top: 70px;
+
+}
+
+ 
+/*Center circle button*/
+.menu_opener_label {
+
+  background: #f1c40f;
+  background-image:url(http://vignette2.wikia.nocookie.net/anicrossbr/images/5/5a/Sakura_-_034.jpg/revision/latest?cb=20151027132008&path-prefix=pt-br);
+  background-size: 100% 110%;
+  width: 90px;
+
+  height: 90px;
+
+  display: block;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+
+  position: absolute;
+
+  top: auto;
+
+  left: 0;
+
+  z-index: 10;
+
+
+}
+
+/*Code for top bar remove if you don't need*/
+/*.menu_opener_label:after {
+
+  position: absolute;
+
+  top: 50px;
+
+  left: 50px;
+
+  background: #fff;
+
+  content: "";
+
+  width: 5px;
+
+  height: 10px;
+
+  -webkit-transition: all 0.4s ease;
+
+  transition: all 0.4s ease;
+
+}*/
+
+/*Code for bottom bar remove if you don't need*/
+/*.menu_opener_label:before {
+
+  position: absolute;
+
+  top: 90px;
+
+  left: 50px;
+
+  background: #000;
+
+  content: "";
+
+  width: 5px;
+
+  height: 10px;
+
+  -webkit-transition: all 0.4s ease;
+
+  transition: all 0.4s ease;
+
+}*/
+ 
+/*code for middle bar*/
+/*.barre_hamburger {
+
+  width: 5px;
+
+  height: 10px;
+
+  position: absolute;
+
+  top: 100px;
+  left: 110px;
+  background: #fff;
+  opacity: 0.5;
+
+  z-index: 20;
+
+  -webkit-transition: all 0.4s ease;
+
+  transition: all 0.4s ease;
+
+}*/
+
+
+
+
+.link_general {
+
+  width: 200px;
+
+  height: 50px;
+
+  display: block;
+
+ 
+
+  position: absolute;
+
+  top: auto;
+
+  left: auto;
+
+  background: #ecf0f1;
+  background-image:url(http://cdn.mysitemyway.com/etc-mysitemyway/webtreats/assets/posts/107/thumbs/tileable-space-waves-patterns-5.jpg);
+
+  -webkit-transition: all 0.4s ease;
+
+  transition: all 0.4s ease;
+
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+  z-index:-1;
+  transform:translateY(7.5%);
+
+  transform: translateY(7.5%);
+  -webkit-transform: translateY(7.5%);
+  -moz-transform: translateY(7.5%);
+  -o-transform: translateY(7.5%);
+  transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+  -webkit-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+  -moz-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+  -o-transition: all .5s cubic-bezier(.25, 1, .5, 1.25);
+}
+/*Reminder to self change popup1 to popupi where i is the appropiate page for the friend's list for the searchbar*/
+#popup1 .popup .friendbar{
+	margin-top:60px;
+	margin-left: 100px;
+	
+}
+
+/*Whitebox to display username*/
+#popup1 .username-disp{
+  width: 1000px;
+ 
+  padding: -10px 0 0;
+  margin: 130px 100px;
+  background: #FFF;
+}
+/*Text associated with the account holder's username.*/
+#popup1  .username-disp .loginid{
+	font-family: "Abel";
+	font-size: 2em;
+	margin-top:-130px;
+	color:#03000A;
+	
+	
+}
+
+/*Username: CSS.*/
+#popup1  .username-colon .usernamecol{
+	font-family: "Abel";
+	font-size: 1em;
+	padding-left: 100px;
+	padding-top:50px;
+	color:#fff;
+	
+}
+
+/*white box/countainer to better display age*/
+#popup1  .age{
+	width:400px;
+	padding: 0px 0 0;
+	margin: 5px 100px;
+	background: #fff;
+}
+
+/*Age: CSS*/
+#popup1  .age-colon .agecol{
+	font-family:"Abel";
+	font-size: 1em;
+	margin-top:-130px;
+	padding-left:100px;
+	color:#fff;
+}
+
+/*css for age setting cogwheel*/
+#popup1  .age .menu-setting{
+	color:black;
+	padding-top:-140px;
+	
+	padding-left:375px;
+	font-size:1.5em;
+}
+
+/*Css associated with placing age value text*/
+#popup1  .age .ageval{
+	font-family:"Abel";
+	font-size:2em;
+	/*padding-left:100px;*/
+	padding-top:-10px;
+	color:#03000A;
+}
+
+/*Css associated with Gender:*/
+#popup1 .gender-col .gendercol{
+	font-family: "Abel";
+	font-size: 1em;
+	margin-top: -3px;
+	padding-left:100px;
+	color: #fff;
+}
+
+/*white box/countainer to better display gender*/
+#popup1 .gender{
+	width:300px;
+	padding: 0px 0 0;
+	margin: 1px 100px;
+	background: #fff;
+}
+
+/*CSS associated with gender cog*/
+
+#popup1 .gender .gender-setting{
+	color:#03000A;
+	padding-top:-100px;
+	padding-left:92%;
+	font-size:1.5em;
+	
+}
+
+#popup1  .gender .gender-val{
+	font-family:"Abel";
+	font-size:2em;
+	/*padding-left:100px;*/
+	padding-top:-10px;
+	color:#03000A;
+}
+
+#popup1  .bio-col .biocol{
+	font-family: "Abel";
+	font-size: 1em;
+	margin-top: 0px;
+	padding-left:100px;
+	color: #fff;
+}
+
+#popup1  .bio-col .biosetting{
+	color: #fff;
+	font-size: 1em;
+	font-family: "Abel";
+	margin-top: 0px;
+	padding-left: 100px;
+}
+
+#popup1  .bio{
+	width: 1000px;
+	
+	padding: 20% 0 0;
+	margin: 5px 100px;
+	background: #fff;
+}
+#popup1 .bio .bio-text{
+	margin-top:-260px;
+	padding: 0 0 0 0;
+	font-family: "Abel";
+	color: #03000A;
+	font-size: 1.2em;
+	
+}
+
+#popup2 .popup .battle-disp{
+	width:1000px;
+	margin-left: 10px;
+	margin-top: 50px;
+	padding: 40% 10% 0.5%;
+	background: #fff;
+}
+
+#popup2 .battle-disp .battlestyle-text{
+   	margin-top: -500px;
+	margin-left: 10px;
+	font-family: "Abel";
+	font-size: 1.3em;
+	color: #03000A;
+}
+
+#popup3 .notableskills .skills-disp{
+	width: 1000px;
+	margin-left:10px;
+	margin-top: 50px;
+	padding: 40% 10% 0.5%;
+	background:#fff;	
+	
+}
+
+#popup3 .notableskills .skills-disp .skills-text{
+   	margin-top: -500px;
+	margin-left: 10px;
+	font-family: "Abel";
+	font-size: 1.1em;
+	color: #03000A;
+}
+
+#popup4 .popup .personality .persona-disp{
+	width: 1000px;
+	margin-left:10px;
+	margin-top: 50px;
+	padding: 40% 10% 0.5%;
+	background:#fff;
+
+}
+
+#popup4 .popup .personality .persona-disp .persona-text{
+ 	margin-top: -500px;
+	margin-left: 10px;
+	font-family: "Abel";
+	font-size: 1.1em;
+	color: #03000A;
+
+}
+
+#popup5 .popup .stats .stat-disp{
+	width: 1000px;
+	margin-left:10px;
+	margin-top: 50px;
+	padding: 40% 10% 0.5%;
+	background:#fff;
+}
+
+#popup5 .popup .stats .stat-disp .stat-text{
+	margin-top: -500px;
+	margin-left: 10px;
+	font-family: "Abel";
+	font-size: 1.1em;
+	color: #03000A;
+}
+/*#popup1 .popup .bio .bio-setting{
+	color: #03000A;
+	padding-top: 0px;
+	padding-left: 92%;
+	font-size: 1.5em;
+}*/
+
+/*popup2 .popup .friend-panel{
+	width: 300px;
+	padding: 90px 0 0;
+	margin: 40px 100px;
+	background: #FFF;
+}
+
+#popup2 .popup .friend-panel .friendpic{
+	background-image:url(http://i.imgur.com/MtHUP6F.jpg);
+	background-size: 100% 110%;
+	border-radius:50%;
+	width: 80px;
+	height: 80px;
+	display: block;
+	cursor: pointer;
+	border-radius: 50%;
+	position: absolute;
+	top: 25%;
+	left: auto;
+}
+
+#popup2 .friendbar{
+	width: 300px;
+	margin-top:100px;
+
+	
+}
+
+#popup2 .friendname .friendvalue{
+	color:#03000A;
+	font-size:2em;
+	font-family:"Abel";
+	margin-top:-90px;
+	padding-left:80px;
+}
+*/
