@@ -39,6 +39,9 @@ int main(int argc, char *argv[])
 	memset(&sendBuff,'0',sizeof(sendBuff));
 	iPort=atoi(argv[1]);
 	
-	
+	servaddr.sin_family = AF_INET;
+	servaddr.sin_addr.s_addr = INADDR_ANY;
+    servaddr.sin_port = htons(iPort);
+    
 		
 }
