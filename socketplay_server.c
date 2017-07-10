@@ -22,8 +22,9 @@ int main(int argc, char *argv[])
 	struct sockaddr_in servaddr, cliaddr; 
 	int clilen=-1; // length of client ip address 
 	int iListenSuccess=-1;
-	int n; 
-	
+	int middleman; 
+	int iMessageLen=0; // length of user entered message
+	char *cUsermessage;
 	char sendBuff[256];
 	if(argc<2)
 	{
@@ -71,6 +72,21 @@ int main(int argc, char *argv[])
 	 * 			socket [which in our case is the socket associated with the file descriptor server_fd]
 	 * creates a new socket file descriptor referring to that socket. At that point, client and server are ready to exchange data. 
 	 * */
-	new_socket=accept(server_fd,(struct *sockaddr) &cliaddr, &clilen);
-	
+	new_socket=accept(server_fd,(struct sockaddr *) &cliaddr, &clilen);
+	middleman=read(new_socket,sendBuff,255);
+	if(middleman<0)
+	{
+		perror("Failed to read from socket exiting..");
+		exit(EXIT_FAILURE);
+	}
+	printf("Message : %s\n",sendBuff);
+	cUsermessage="I got your message";
+	iMessageLen=strlen(cUsermessage);
+	middleman=write(new_socket,cUsermessage,iMessageLen);
+	if (middleman<0)
+	{
+		perror("Failed to write from socket exiting...");
+		exit(EXIT_FAILURE);
+	}
+	return 0;
 }
