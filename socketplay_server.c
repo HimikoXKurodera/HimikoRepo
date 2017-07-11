@@ -10,6 +10,8 @@
 #include <time.h>
 #include <strings.h>
 
+void writemessage(int iFd, char *buff);
+
 int main(int argc, char *argv[])
 {
 	int server_fd=0;
@@ -24,8 +26,9 @@ int main(int argc, char *argv[])
 	int iListenSuccess=-1;
 	int middleman; 
 	int iMessageLen=0; // length of user entered message
-	char *cUsermessage;
+	
 	char sendBuff[256];
+	int iPid=0; // variable to track process id which is the process for each connection 
 	if(argc<2)
 	{
 		fprintf(stderr,"There is no port number provided please try again with a port number\n");
@@ -72,7 +75,9 @@ int main(int argc, char *argv[])
 	 * 			socket [which in our case is the socket associated with the file descriptor server_fd]
 	 * creates a new socket file descriptor referring to that socket. At that point, client and server are ready to exchange data. 
 	 * */
-	new_socket=accept(server_fd,(struct sockaddr *) &cliaddr, &clilen);
+	// TO DO: start the while loop here 
+	/*new_socket=accept(server_fd,(struct sockaddr *) &cliaddr, &clilen);
+	while(1)
 	middleman=read(new_socket,sendBuff,255);
 	if(middleman<0)
 	{
@@ -80,13 +85,62 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	printf("Message : %s\n",sendBuff);
-	cUsermessage="I got your message";
+	cUsermessage="I got your message\n";
 	iMessageLen=strlen(cUsermessage);
 	middleman=write(new_socket,cUsermessage,iMessageLen);
 	if (middleman<0)
 	{
 		perror("Failed to write from socket exiting...");
 		exit(EXIT_FAILURE);
+	}*/
+	
+	while(1)
+	{
+		new_socket=accept(server_fd,(struct sockaddr *) &cliaddr, &clilen);
+		if (new_socket<0)
+		{
+			perror("Error on accepting socket");
+			exit(1);
+		}
+		iPid=fork();
+		if(iPid<0)
+		{
+			perror("Error on fork");
+			exit(1);
+		}
+		if(iPid==0)
+		{
+			close(server_fd);
+			writemessage(new_socket, sendBuff);
+			exit(0);
+		}
+		else
+		{
+			close(new_socket);
+		}	
 	}
 	return 0;
+}
+
+void writemessage(int iFd, char *buff)
+{
+	int iMiddleman=-1;
+	iMiddleman=read(iFd,buff,255);
+	char *cUsermessage;
+	int iMessageLen=-1;
+	if(iMiddleman<0)
+	{
+		perror("Failed to read from socket exiting program...");
+		exit(1);
+	}
+	
+	printf("Message : %s\n",buff);
+	cUsermessage="I got your message\n";
+	iMessageLen=strlen(cUsermessage);
+	iMiddleman=write(iFd,cUsermessage,iMessageLen);
+	if (iMiddleman<0)
+	{
+		perror("Failed to write from socket exiting...");
+		exit(1);
+	}
 }
