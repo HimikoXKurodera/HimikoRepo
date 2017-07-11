@@ -42,7 +42,8 @@ int main(int argc, char const *argv[])
 	}
 	memset(&servaddr,'0',sizeof(servaddr));
 	servaddr.sin_family=AF_INET;
-	bcopy((char *)server->h_addr,(char *)servaddr.sin_addr.s_addr,server->h_length);
+	//bcopy((char *)server->h_addr,(char *)servaddr.sin_addr.s_addr,server->h_length);
+	bcopy((char *)server->h_addr,(char *)&servaddr.sin_addr.s_addr,server->h_length);
 	servaddr.sin_port=htons(iPort);
 	iConnectSucess=connect(iClientfd,&servaddr,sizeof(servaddr));
 	if(iConnectSucess<0)
